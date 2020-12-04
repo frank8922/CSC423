@@ -1,0 +1,740 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Final Project</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="681107f1-e54f-48f5-8454-45f767d94287" class="page sans"><header><h1 class="page-title">Final Project</h1><table class="properties"><tbody><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>Date</th><td><time>@Dec 2, 2020</time></td></tr><tr class="property-row property-row-text"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Name</th><td>Francisco Belliard</td></tr></tbody></table></header><div class="page-body"><h2 id="24588ebf-4451-4be7-a453-563c7d327d1d" class="">Case Study Notes: <em>Reliable Rentals</em></h2><blockquote id="f532ac0b-69c0-4dd9-a205-1e7ed0f17aa2" class="">Purpose: Rent out vehicles to clients.</blockquote><ul id="38864c64-3ab2-4627-a2e6-c962dd74eba1" class="toggle"><li><details open=""><summary>Case Study Description</summary><p id="1734669e-335d-4e84-9d05-dea1314f58c6" class="">A company called Reliable Rentals rents out vehicles at different outlets (locations/sites).
+Each outlet has a number, address, phone number and a fax number. Each site is allocated a stock of vehicles for hire. The registration number uniquely identifies each vehicle for hire
+and is used when hiring a vehicle to a client.</p><p id="43f69ecd-8fe0-43af-8cb9-65b3b3dca8d6" class="">Clients may hire vehicles for various periods of time. Each individual hire agreement between
+a client and the Company is uniquely identified using a hire number. Information stored on
+the vehicles for hire include: the vehicle registration number, model, make, engine size,
+capacity, current mileage, daily hire rate, and the current location (outlet) of each vehicle.
+The data stored on clients includes the client number (unique identifier), name (first and last
+name), home address, phone number, date of birth, and driving license number.</p><p id="3004f257-2d05-4988-9919-e5d565870d3e" class="">The data stored on a hire agreement includes: the hire number, the client’s number, name,
+address, and phone number, date the client started the hire period, date the client wishes to
+terminate the hire period, the vehicle registration number, model and make, the mileage
+before and after the hire period. Finally, information is stored on the staff based at various
+outlets including: staff number, name (first and last name), home address, home phone
+number, date of birth (DOB), sex, date joined the Company, job title, and salary. Each staff
+member is associated with a single outlet.</p><p id="0e8b1255-058b-4194-9313-34be785daa42" class="">
+</p></details></li></ul><h3 id="f1c1762f-9fcf-419e-8386-6dd43108f3ce" class="">1. Develop a conceptual data model reflecting the following requirements:</h3><hr id="f356e5b5-7e0a-4d7e-be90-99a696c39350"/><p id="8e015d94-b13a-439b-be3e-259b1a0cff4c" class="block-color-gray_background"><strong>a.  Identify the relations or entity types.</strong></p><ul id="185b908d-15d9-415f-ab47-50d2d05b605a" class="bulleted-list"><li>Client(<strong>clientNo, </strong>fName, lName, address, phoneNo, DOB, dLicenseNo).</li></ul><ul id="1ac96d5b-32a1-464b-9a91-3f8d92f139ba" class="bulleted-list"><li>Staff(<strong>staffNo</strong>, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).</li></ul><ul id="2e76f8e6-68ae-471c-8b62-317632e76195" class="bulleted-list"><li>Outlet(<strong>outletNo</strong>, address, phoneNo, faxNo, staffNo,)</li></ul><ul id="fd7d79e5-974d-4a86-9c3f-19271023ec4b" class="bulleted-list"><li>Vehicle(regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)</li></ul><ul id="4031b788-a503-402b-ba24-9f7ba2727992" class="bulleted-list"><li>HireAgreement(<strong>hireNo</strong>, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)</li></ul><hr id="242c8486-6649-4fb5-b27f-d22d7819eb8f"/><p id="603475b0-280b-4df6-84de-275327fbecae" class="block-color-gray_background"><strong>b.  Identify the relationship types as well as their participation and cardinality</strong></p><div id="638c45cc-f8a4-45e4-81e4-6e45a141b194" class="column-list"><div id="820d7580-cea6-46c4-b849-cfe92e255b21" style="width:50%" class="column"><h3 id="bda46e01-2409-4e5d-9256-3004fda98f88" class="">Relationship Types</h3><ul id="4137f320-1dbb-4ee1-bc7c-c5d30140c201" class="bulleted-list"><li>Outlet <em>has</em> Staff</li></ul><ul id="b8beb965-2da3-4661-a56a-331d99c09698" class="bulleted-list"><li>Outlet <em>is allocated</em> Vehicles</li></ul><ul id="9dab3b3a-f348-43c4-9c22-740d52bb6aad" class="bulleted-list"><li>A Client <em>signs a </em>Hire Agreement</li></ul><ul id="2e048aca-da3a-4024-9167-f9f78c71b586" class="bulleted-list"><li>Each Hire agreement is <em>for a</em> Vehicle</li></ul><p id="21b53aae-f370-47d8-bbaa-c679e2ef706d" class="">
+</p></div><div id="0e3e097f-4b4e-4ceb-81a4-297ba3dfed4a" style="width:50%" class="column"><figure id="2a4067fb-3de3-414f-9a37-c966055a2877" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Entity-Relation-Diagram.png"><img style="width:490px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Entity-Relation-Diagram.png"/></a><figcaption>Fig 1. Individual entities and their respective relationships.</figcaption></figure></div></div><figure id="f73804b0-a245-4357-af8f-bd77baf14500" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Entity-Relation-Diagram.png"><img style="width:780px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Entity-Relation-Diagram.png"/></a><figcaption>Fig 1.1 Connected ER-Diagram to show entity relationships.</figcaption></figure><p id="3febdc39-c64c-4b5b-92bb-0eedcda4a6c5" class="">
+</p><div id="fc5f95c5-95c4-41fa-983a-61f8497a06a5" class="column-list"><div id="5d7699af-36da-4eda-a60b-08ca40a34c8d" style="width:50%" class="column"><h3 id="90ecd385-d9de-4ddd-989e-bed842530e95" class="">Cardinality Constraints</h3><ul id="80b1e21f-b7f0-4e46-89f9-f72d51683ce1" class="bulleted-list"><li>Outlet is allocated Vehicles<ul id="68ec8ff6-9fdd-4648-b405-2867abcb191d" class="bulleted-list"><li>An outlet is allocated vehicles (1..*)</li></ul><ul id="aec24226-6894-49ce-829d-f8f4aebcc4d1" class="bulleted-list"><li>A vehicle is allocated to an outlet (1..1)</li></ul></li></ul><ul id="c5fd68f2-70e3-4a51-84c1-b2e8ad389b46" class="bulleted-list"><li> Outlet has Staff<ul id="ce451c20-a5c0-40a2-90dd-52b8dc438e14" class="bulleted-list"><li>An outlet has one or more staff members (1..*)</li></ul><ul id="da52ca99-95c0-406e-9f35-15f183f69e6f" class="bulleted-list"><li>A staff member is assigned to a an outlet (1..1)</li></ul></li></ul><ul id="d0348aea-2f05-4af1-9b01-b791649bf3a3" class="bulleted-list"><li>A Client <em>signs a </em>Hire Agreement<ul id="2ad784e5-9ac2-49cb-b30c-cf83afdbb249" class="bulleted-list"><li>A client signs one or more hire agreements (1..*)</li></ul><ul id="877a98e2-b8a2-4967-9984-3e51b8d4618e" class="bulleted-list"><li>A hire agreement is signed by a client (1..1)</li></ul></li></ul><ul id="3372a5fb-16b4-4302-af25-74f444c5ed21" class="bulleted-list"><li>Each Hire agreement is <em>for a</em> Vehicle<ul id="39daa5ad-95fb-43c5-8640-0f2fbcf97df3" class="bulleted-list"><li>A hire agreement is for a vehicle (1..1)</li></ul><ul id="701eef6f-69ed-4de1-9e94-cd815314531a" class="bulleted-list"><li>A vehicle can either have a hire agreement or not (0..1)</li></ul></li></ul></div><div id="24f872e5-118e-4d0d-ab6d-72d9a8bd7c8b" style="width:50%" class="column"><figure id="4949f811-9d4b-4408-a089-963557f5fe68" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Cardinality-Relation_Diagram.png"><img style="width:490px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Cardinality-Relation_Diagram.png"/></a><figcaption>Fig 1.2 Individual entities and their cardinality constraints.</figcaption></figure><p id="08e104ff-b64e-46b2-9eab-577d46986773" class="">
+</p></div></div><figure id="367d108b-6e7b-4b05-be7f-5d5e6fc82b94" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Cardinality-Relation_Diagram.png"><img style="width:770px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Cardinality-Relation_Diagram.png"/></a><figcaption>Fig. 1.3 Entities and their relationships along with their respective cardinality constraints.</figcaption></figure><hr id="4d2a85c5-3e2a-412a-9934-a2b513a6dc5e"/><p id="6e18eb3c-10cc-4830-aa02-776c9db8c4af" class="block-color-gray_background">c. <strong> Identify the attributes associated to the previous entity or relationship types.</strong></p><hr id="73740425-2df2-4f72-865b-12968b8bd423"/><p id="69d3c639-5a05-44c2-a234-f7f70926b5f8" class="">
+</p><div id="ed7a0715-6ff0-4332-a355-0109891f297b" class="column-list"><div id="1bc61cf9-d3ae-49e5-ac82-3533778d7ca2" style="width:50%" class="column"><ul id="fe74c235-e898-4c78-aff1-6184ee6a0583" class="toggle"><li><details open=""><summary>Client(<strong>clientNo, </strong>fName, lName, address, phoneNo, DOB, dLicenseNo).</summary><ol id="ed3c29ce-f6ea-4227-9984-a4605ce5fa6b" class="numbered-list" start="1"><li>clientNo: a single-valued attribute to hold the client number</li></ol><ol id="45d9b55e-db5b-4f6d-99fc-4c4f7dbf20a6" class="numbered-list" start="2"><li>fName: a single-valued attribute to hold the clients first name.</li></ol><ol id="9d806939-7602-4499-a650-95a3f79ee5ea" class="numbered-list" start="3"><li>lName: a single-valued attribute to hold the clients last name.</li></ol><ol id="94420744-6131-49d5-9fee-8300446d0ca5" class="numbered-list" start="4"><li>address: a single-valued attribute to hold the client addressD</li></ol><ol id="d7ceb5d1-3e0e-4eee-b579-d60f1c5b2fb4" class="numbered-list" start="5"><li>phone: a single-valued attribute to hold the client phone number.</li></ol><ol id="1ef26e1c-ec3a-4d54-8dec-25a96d958f23" class="numbered-list" start="6"><li>DOB: a single-valued attribute to hold the client date of birth.</li></ol><ol id="1344dcd7-1c3e-43d4-a8af-a7a9ab7dc874" class="numbered-list" start="7"><li>dLicenseNo: a single-valued attribute to hold the client driver license number.</li></ol><p id="06936065-12da-4260-932d-a49becfce909" class="">
+</p></details></li></ul><ul id="7a9df70d-6784-4412-a992-6448142ae215" class="toggle"><li><details open=""><summary>Staff(<strong>staffNo</strong>, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).</summary><ol id="0cdaecc5-bfc6-49a3-be9c-433f66a24297" class="numbered-list" start="1"><li>staffNo: a single-valued attribute to hold the staff number</li></ol><ol id="8041bb4b-eed3-4ad9-a80e-44e0cc903feb" class="numbered-list" start="2"><li>fName: a single-valued attribute to hold the staff member first name.</li></ol><ol id="ec9d0606-7b30-4190-9531-9b44abd85078" class="numbered-list" start="3"><li>lName: a single-valued attribute to hold the staff member last name.</li></ol><ol id="8a11bc3d-4242-485e-acda-3eac78f12e9c" class="numbered-list" start="4"><li>address: a single-valued attribute to hold the staff member addressD</li></ol><ol id="a46ad477-2c73-4a13-8abe-adf65a46a601" class="numbered-list" start="5"><li>phone: a single-valued attribute to hold the staff member phone number.</li></ol><ol id="ad84a1ae-719e-455a-b308-3d1f587a7acd" class="numbered-list" start="6"><li>DOB: a single-valued attribute to hold the staff member date of birth.</li></ol><ol id="86c12b16-928e-4725-a631-bed10263325d" class="numbered-list" start="7"><li>sex: single-valued attribute to hold the staff members sex.</li></ol><ol id="6d64d6dc-c610-4a39-b6f5-dda0c5713692" class="numbered-list" start="8"><li>jobTitle: single-valued attribute to hold the staff job title.</li></ol><ol id="6ae5ff70-01a0-44cd-b381-fc829533d05d" class="numbered-list" start="9"><li>dateHired: singled-valued attribute to hold the date the staff member was hired.</li></ol><ol id="94ac5c3e-d408-44a0-8c94-f461a249791a" class="numbered-list" start="10"><li>salary: single-valued attribute to hold the staff members salary.</li></ol><ol id="d28f7419-6244-4195-b128-416a4dc34849" class="numbered-list" start="11"><li>outletNo: single-valued attribute to hold the outlet the staff member is assigned to.</li></ol></details></li></ul><ul id="17bfded2-d726-49ac-ade2-f558740e84c5" class="toggle"><li><details open=""><summary>Outlet(<strong>outletNo</strong>, address, phoneNo, faxNo, staffNo,)</summary><ol id="dfbdb65f-818e-481e-ba0f-075504bf94a1" class="numbered-list" start="1"><li>outletNo: a single-valued attribute to hold the outlet number.</li></ol><ol id="0a3e2a24-a6fc-443a-8121-ef7a5394a995" class="numbered-list" start="2"><li>address: a single-valued attribute to hold the outlet address.</li></ol><ol id="e8931efb-41b5-4474-b236-14fb070bff97" class="numbered-list" start="3"><li>phoneNo: a single-valued attribute to hold the outlet phone number.</li></ol><ol id="3bec79ec-fb84-431a-8963-20f3385c2a54" class="numbered-list" start="4"><li>faxNo: a single-valued attribute to hold the outlet fax number.</li></ol><ol id="c22e9688-ae80-4230-be9b-a064b75f0d2c" class="numbered-list" start="5"><li>staffNo: a single-valued attribute to hold the staff number assigned to that outlet.</li></ol></details></li></ul><ul id="75f11a63-e241-43c2-b5c3-fa6ce04422e4" class="toggle"><li><details open=""><summary>Vehicle(regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)</summary><ol id="ee6dc358-ee6b-418c-9afa-32f0f5d223ad" class="numbered-list" start="1"><li>regNo: a single-valued attribute to hold the vehicle registration number.</li></ol><ol id="3e97d77f-6cd7-4fa4-bdf8-cd2ab5b56b29" class="numbered-list" start="2"><li>make: a single-valued attribute to hold the vehicle make.</li></ol><ol id="878c5499-2795-47c1-97d4-a37845d773f0" class="numbered-list" start="3"><li>model: a single-valued attribute to hold the vehicle model.</li></ol><ol id="eb0349a1-05b6-4e9d-8572-164b49d841da" class="numbered-list" start="4"><li>engineSize: a single-valued attribute to hold the vehicle engine size.</li></ol><ol id="084c8e36-6297-4454-97fd-df86aada6ad3" class="numbered-list" start="5"><li>capacity: a single-valued attribute to hold the vehicle capacity.</li></ol><ol id="43a3f5cc-4fa3-466d-b794-64c936cdca56" class="numbered-list" start="6"><li>currentMileage: a single-valued attribute to hold the vehicle&#x27;s current mileage.</li></ol><ol id="000afb83-75c4-444e-96d2-8e66c20c0fc2" class="numbered-list" start="7"><li>dailyRate: a single-valued attribute to hold the vehicle&#x27;s daily rental rate.</li></ol><ol id="9d7cb489-1703-4bdc-b0ae-56aa23a1e7b8" class="numbered-list" start="8"><li>outletNo: a single-valued attribute to hold the outlet the vehicle belongs to.</li></ol></details></li></ul><ul id="84d82c67-b011-4b83-8250-bfaf26fa872c" class="toggle"><li><details open=""><summary>HireAgreement(<strong>hireNo</strong>, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)</summary><ol id="58c90899-0fbd-4d3b-993b-1e37389483e4" class="numbered-list" start="1"><li>hireNo: a single-valued attribute to hold the hire number.</li></ol><ol id="636369ea-c053-4071-8aa2-11cf01493c0b" class="numbered-list" start="2"><li>clientNo: a single-valued attribute to hold the client number.</li></ol><ol id="e9efa5b0-426d-4bba-b807-12c29ad10132" class="numbered-list" start="3"><li>fName: a single-valued attribute to hold the clients first name.</li></ol><ol id="d611462c-cfd2-436a-b26e-88f0ef93c317" class="numbered-list" start="4"><li>lName: a single-valued attribute to hold the clients last name.</li></ol><ol id="689a86df-27fb-4d96-8301-9ed350d3dc98" class="numbered-list" start="5"><li>rentalStarted: a single-valued attribute to hold the rental start date.</li></ol><ol id="47a3760b-4b18-4f6d-89d5-2049aea7acda" class="numbered-list" start="6"><li>returnBy: a single-valued attribute to hold the rental return date.</li></ol><ol id="6deaafac-0d9e-46d6-aa18-9bdc562cec40" class="numbered-list" start="7"><li>startMileage: a single-valued attribute to hold the rental start mileage.</li></ol><ol id="0a3f6c75-5e0b-488d-816a-67727ab8d48a" class="numbered-list" start="8"><li>endMileage: a single-valued attribute to hold the rental end mileage.</li></ol><ol id="34db3e6b-18e9-44de-b6bd-6fadcd3762bf" class="numbered-list" start="9"><li>regNo: a single-valued attribute to hold the vehicle registration number assigned to the hire agreement.</li></ol></details></li></ul></div><div id="6d8807d1-c9e3-4d32-bb60-1f18aa0dbab3" style="width:50%" class="column"><figure id="b03102f4-4293-4ac1-bafc-7a3f84d0c956" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Attribute-Diagram.png"><img style="width:450px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Attribute-Diagram.png"/></a><figcaption>Fig 1.4 Individual entities and their attributes</figcaption></figure></div></div><hr id="a79d986e-e5e7-467d-96fe-d5a88702cfb1"/><p id="927675e3-bc29-4692-a7e1-48e872a63225" class=""><strong>d.  Determine candidate and primary key attributes of entity types.</strong></p><hr id="186b4822-7a9b-4ebb-ac34-4983f967d294"/><p id="c9915566-cfe7-4e79-ac84-a66e57ae1bb4" class=""><strong>Strong Entity Types:</strong></p><ul id="ab74b1fb-f51f-4a45-aa8d-8bdde56712ae" class="bulleted-list"><li>Client(<strong>clientNo, </strong>fName, lName, address, phoneNo, DOB, dLicenseNo).<ul id="82be7c0a-258f-4720-b022-5a2f5bd855e7" class="bulleted-list"><li>Primary key: client No</li></ul><ul id="2d7c26a1-c113-4d48-8ad9-a88897af3aac" class="bulleted-list"><li>Candidate key: clientNo, dLicenseNo</li></ul></li></ul><ul id="a5771fb0-4ee9-4e71-a8db-59c5f6df023b" class="bulleted-list"><li>Staff(<strong>staffNo</strong>, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).<ul id="c892f947-29bf-43bd-bdea-a88544023084" class="bulleted-list"><li>Primary key: staffNo</li></ul><ul id="f5521e02-77dd-455c-ad6a-83706a80e7aa" class="bulleted-list"><li>Candidate key: staffNo, outletNo</li></ul></li></ul><ul id="d46b74cf-c485-4c41-b66a-af1d3fdcc3d1" class="bulleted-list"><li>Outlet(<strong>outletNo</strong>, address, phoneNo, faxNo, staffNo,)<ul id="d57ede64-5848-4f8e-958f-27a94eb94308" class="bulleted-list"><li>Primary key: outletNo</li></ul><ul id="28cdf787-0e9f-4f5e-86ac-6efd08246a17" class="bulleted-list"><li>Candidate key: outletNo, staffNo</li></ul></li></ul><ul id="4471b7b3-dbb2-4aba-b665-d2ffbdd5dfdc" class="bulleted-list"><li>Vehicle(regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)<ul id="03d1f7ea-4a07-47ef-bba9-1951d858c15e" class="bulleted-list"><li>Primary key: regNo</li></ul><ul id="d082c16c-3c85-45aa-8963-72933178b017" class="bulleted-list"><li>Candidate key: regNo, outletNo</li></ul></li></ul><ul id="c0df43de-d066-45c2-8aa2-718389129311" class="bulleted-list"><li>HireAgreement(<strong>hireNo</strong>, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)<ul id="5e50ae73-2939-4483-b1dc-bca37d5823c5" class="bulleted-list"><li>Primary key: hireNo</li></ul><ul id="cff8f634-02cd-4cf1-823f-63970fa2ece5" class="bulleted-list"><li>Candidate key: regNo, clientNo, regNo</li></ul></li></ul><p id="48871cd9-cb1a-4ebe-9e1e-0734d32c5af8" class=""><strong>Weak Entity Types:</strong></p><ul id="3ce92288-2735-44c7-9c2e-22f439d494dd" class="bulleted-list"><li>None</li></ul><hr id="6ec01174-1ca4-45fc-b1cb-2343f2d2a931"/><h3 id="1ba1bb8c-6df1-42ae-abd6-f97bcc426a85" class="">2. Develop a logical data model based on the following requirements:</h3><hr id="99c19c0f-077a-4643-b398-e343764aabfb"/><p id="f5912ebe-9134-4a8e-98a0-2bbb0bc99688" class="block-color-gray_background">a.  Derive relations from the conceptual model.</p><hr id="fd68f956-3d5f-464c-b336-52c07b1a0f9a"/><figure id="5b289be4-89fc-4370-ba21-3e15f1cbb42b" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Logical-Entity-Relationship_Diagram.png"><img style="width:870px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Logical-Entity-Relationship_Diagram.png"/></a><figcaption>Fig. 2.1 Logical data model with foreign keys</figcaption></figure><p id="8df83bbd-3651-4c98-abbd-26ea47f5ccd1" class="block-color-gray_background">b.  Validate the logical model using normalization to 3NF.</p><hr id="f14a1032-3546-4276-8c5a-b7bc562a7a6c"/><p id="75889dab-a158-48f0-927f-079092f1c7d6" class="">Tables defined in conceptual model: </p><p id="ed7a8b02-2dfd-4557-a78e-ab5898c28c35" class=""><strong>1NF (Flattening the UNF Table</strong></p><ul id="8253a1a3-9179-4357-8ec4-b6daa78ea0b6" class="bulleted-list"><li>Client(<strong>clientNo, </strong>fName, lName, address, phoneNo, DOB, dLicenseNo).</li></ul><ul id="b7903b9e-8a0f-4419-a03a-d50ab43de765" class="bulleted-list"><li>Staff(<strong>staffNo</strong>, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).</li></ul><ul id="5d6ca623-bd5f-4508-b0b7-39d477d6e70a" class="bulleted-list"><li>Outlet(<strong>outletNo</strong>, address, phoneNo, faxNo, staffNo,)</li></ul><ul id="e6f73b05-d72c-4771-93c6-8d02977e16af" class="bulleted-list"><li>Vehicle(<strong>regNo</strong>, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)</li></ul><ul id="12a7a49b-4dab-4fc7-972b-39d0de7114c4" class="bulleted-list"><li>HireAgreement(<strong>hireNo</strong>, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)</li></ul><p id="693aa4e3-789e-49c2-b25a-c27e96b5c404" class=""><strong>Functional Dependancies</strong></p><ul id="4513e654-4952-439a-b005-0ea6e8eada74" class="bulleted-list"><li>clientNo —&gt; fName, lName, address, phoneNo, DOB, dLicense (Full)</li></ul><ul id="716a6f15-58e2-4bb0-83f7-bbccc7125152" class="bulleted-list"><li>clientNo —&gt; dLicense (candidate key)</li></ul><ul id="31d320ad-7076-4c34-aa86-06c960467b09" class="bulleted-list"><li>staffNo —&gt; fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo (Full)</li></ul><ul id="7e4c3f76-619b-4010-bac9-7988538f874e" class="bulleted-list"><li>outletNo —&gt; address, phoneNo, faxNo, staffNo</li></ul><ul id="0c932cbe-4648-4e2b-a536-80609079051a" class="bulleted-list"><li>regNo —&gt; make, model, engineSize, capacity, currentMileage, dailyRate, outletNo (Full)</li></ul><ul id="00e6a489-1d32-40c1-b0f9-dbc8180e5d42" class="bulleted-list"><li>hireNo —&gt; clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo (Full)</li></ul><p id="81039ac8-f94a-452a-a626-34eafe12ba85" class=""><strong>2NF (Remove partial dependancies)</strong></p><ul id="b9252f6c-6357-4d25-a6b0-964a26d88a63" class="bulleted-list"><li>No Partial dependancies found.</li></ul><p id="5cf2f0ee-d28e-477d-9295-27ca02fe05c9" class=""><strong>3NF (Remove transitive dependancies)</strong></p><ul id="7d8c7ec1-2f7f-4e2f-9414-feb31bc75cb1" class="bulleted-list"><li>No transitive dependancies found.</li></ul><hr id="8b57619e-2551-4b34-a29a-3bc5d256513e"/><p id="87837550-e731-450f-9d9c-574f825e7348" class="block-color-gray_background">c. Define integrity constraints:</p><hr id="17236686-87cc-4eef-b376-5b8100f31607"/><p id="83855d71-142f-42bb-9a5f-9b84e2fff56c" class="">i.  Primary key constraints.</p><ul id="4356fd50-01d4-4d7e-a916-e1725450a226" class="bulleted-list"><li>all primary keys must be an integer and cannot be NULL</li></ul><p id="ee895b2b-21e4-406c-aa39-6f4840ac9ae4" class="">ii. Referential integrity / Foreign key constraints.</p><ul id="8eb2bf38-42e2-45fd-8956-73f45c37a919" class="bulleted-list"><li>For tables: Client, Staff, Outlet, and Vehicle, the foreign key must be an integer and cannot be NULL</li></ul><ul id="9ec3c57d-4043-49d0-94dd-a0bbf4049dd2" class="bulleted-list"><li>For the HireAgreement table the foreign key regNo, linking the Vehicle table with this one, can be NULL since the a vehicle either has a hire agreement or doesn&#x27;t.</li></ul><p id="980e31f0-1c5b-4a87-af4c-302445446a9d" class="">iii.  General constraints. (if any)<div class="indented"><ol id="f4de0d55-8436-4fa6-87c1-60fb336bf925" class="numbered-list" start="1"><li>Registration numbers must be unique (likely PK)</li></ol><ol id="b0950b27-67ad-4956-93dd-68d29f194f56" class="numbered-list" start="2"><li>Client rental start date must be &lt; end date and &gt; current date</li></ol><ol id="a0760d80-547d-42ff-b70c-56dc08cd5a92" class="numbered-list" start="3"><li>Rental end date must be &gt; current date</li></ol><ol id="9d8268f7-1e16-46f1-9e1b-b68cb97698c0" class="numbered-list" start="4"><li>Hire numbers must be unique (likely PK)</li></ol><ol id="bc53c264-5838-4559-b70b-14ee3fd6e243" class="numbered-list" start="5"><li>Engine size must be either: 2L, 4L, 6L</li></ol><ol id="df29e801-d7cf-4b2f-bbe6-290e48e73d0b" class="numbered-list" start="6"><li>Capacity must be either: 2 seats, 4 seats, 6 seats</li></ol><ol id="2cebf47c-31ad-4a17-b2e2-8876e5243163" class="numbered-list" start="7"><li>Current mileage cannot exceed 100K miles</li></ol><ol id="28d786ff-c7bc-4c06-9fa2-f7fbcddfbdac" class="numbered-list" start="8"><li>Daily hire rate must be ≥ $5</li></ol><ol id="dccc91b4-c3c3-4bcc-b3a9-fd2a53a0a3df" class="numbered-list" start="9"><li>DOB must have a year ≥ 1995 (i.e age is at least 25)</li></ol><ol id="22221804-a8bd-456a-b7ae-1763b0856569" class="numbered-list" start="10"><li>Sex must be either male or female</li></ol><ol id="ad7fcf0e-2436-4bbf-add1-808569eaedad" class="numbered-list" start="11"><li>Job title must be either: Sales Rep, Manager, Finance Rep, Customer Service Rep</li></ol><ol id="41ae3ea9-caf9-4deb-a29f-c80c40f1e8ce" class="numbered-list" start="12"><li>Salary must be at least 45K but ≤ 100K</li></ol></div></p><h3 id="0ecd241f-7a57-4580-8d57-971ec0f0aae9" class="">3. Translate the logical data model for the Oracle Enterprise DBMS.</h3><hr id="9589c13b-98ec-4c67-bbfe-d9506ca4ac7e"/><p id="017c9747-d9fd-44b5-b3ee-2d36d277f4f8" class="block-color-gray_background">a.  Develop SQL code to create the entire database schema, reflecting the constraints identified in previous steps.</p><hr id="661b2637-cefb-4017-b073-f707ada74168"/><pre id="0bf14686-619d-4fde-8d82-0aecdf131842" class="code"><code>CREATE table Outlet
+(
+    outletNo int          not null,
+    address   varchar(50) not null,
+    phoneNo  varchar(50)  not null,
+    faxNo    varchar(50)  not null,
+    PRIMARY KEY (outletNo)
+);
+
+CREATE TABLE Client
+(
+    clientNo int not null PRIMARY KEY,
+    fName varchar(50) not null,
+    lName varchar(50) not null,
+    address varchar(50) not null,
+    phoneNo varchar(50) not null,
+    dob date not null,
+    check ( dob &lt; to_date(&#x27;17-dec-1995&#x27;) ),
+    dLicenseNo varchar(50) not null
+);
+
+CREATE TABLE Staff
+(
+    staffNo   int         not null,
+    fName     varchar(50) not null,
+    lName     varchar(50) not null,
+    address   varchar(50) not null,
+    phoneNo   varchar(50) not null,
+    dob         date      not null,
+    check ( dob &lt; to_date(&#x27;17-dec-2002&#x27;) ),
+    sex         varchar(2),
+    jobTitle  varchar(50) not null,
+    dateHired date        not null,
+    salary      int         not null,
+        check ( salary between 45000 and 100000),
+    outletNo  int         not null,
+    constraint outletno
+        foreign key (outletNo) references Outlet
+);
+
+CREATE TABLE Vehicle
+(
+   regNo int not null
+      constraint vehicle_pk
+         primary key,
+   make varchar(50),
+   model varchar(50),
+   engineSize varchar(50),
+       check ( engineSize in (&#x27;2l&#x27;,&#x27;4l&#x27;,&#x27;6l&#x27;) ),
+   capacity int,
+       check ( capacity between 2 and 6),
+   currentMileage int,
+       check ( currentMileage &lt;= 100000 ),
+   dailyRate int,
+       check ( dailyRate between 4 and 50),
+   outletNo int not null,
+       foreign key (outletNo) references  Outlet
+);
+
+CREATE TABLE HireAgreement
+(
+    hireNo         integer primary key,
+    fName         VARCHAR(50),
+    lName         VARCHAR(50),
+    rentalStarted date,
+    check ( rentalStarted &gt; TO_DATE(&#x27;19-DEC-2020&#x27;) ),
+    returnBy      date,
+    startMileage  INT,
+    endMileage   INT,
+		regNo      integer default NULL,
+    FOREIGN KEY(regNo)REFERENCES Vehicle
+);
+
+</code></pre><p id="2a16ff65-e268-42d5-98f9-a9d5de254580" class="block-color-gray_background">b.  Create at least 5 tuples for each for each relation in your database.</p><hr id="205021a2-1741-4997-8848-022291a49c6d"/><pre id="644f7091-ee1a-455c-bbb7-01b5333cc8f3" class="code"><code>insert into Outlet (outletNo, address, phoneNo, faxNo) values (1, &#x27;567 Bunker Hill Park&#x27;, &#x27;354-601-0457&#x27;, &#x27;443-469-4360&#x27;);
+insert into Outlet (outletNo, address, phoneNo, faxNo) values (2, &#x27;53 Leroy Avenue&#x27;, &#x27;327-933-7767&#x27;, &#x27;978-207-0119&#x27;);
+insert into Outlet (outletNo, address, phoneNo, faxNo) values (3, &#x27;5 Lerdahl Junction&#x27;, &#x27;809-840-0039&#x27;, &#x27;353-785-2119&#x27;);
+insert into Outlet (outletNo, address, phoneNo, faxNo) values (4, &#x27;682 Dwight Court&#x27;, &#x27;201-567-4740&#x27;, &#x27;524-240-2887&#x27;);
+insert into Outlet (outletNo, address, phoneNo, faxNo) values (5, &#x27;4932 Surrey Drive&#x27;, &#x27;312-585-7907&#x27;, &#x27;728-625-7215&#x27;);</code></pre><figure id="b0bc6e6d-fc6e-4301-acc3-59e92a2f7fd0" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.41_PM.png"><img style="width:904px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.41_PM.png"/></a></figure><pre id="bf521fdb-98db-411b-babd-cba2b1cafc52" class="code"><code>insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (1, &#x27;Sibylle&#x27;, &#x27;Torbard&#x27;, &#x27;68 Schmedeman Pass&#x27;, &#x27;769-409-0265&#x27;, &#x27;03-Jun-1990&#x27;, &#x27;4636relb881&#x27;);
+insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (2, &#x27;Gale&#x27;, &#x27;Ganley&#x27;, &#x27;4 Dapin Plaza&#x27;, &#x27;299-113-5344&#x27;, &#x27;27-Oct-1987&#x27;, &#x27;2953evvy547&#x27;);
+insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (3, &#x27;Erinn&#x27;, &#x27;Lewry&#x27;, &#x27;680 Golf Street&#x27;, &#x27;675-699-9816&#x27;, &#x27;29-Oct-1991&#x27;, &#x27;2773okhr220&#x27;);
+insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (4, &#x27;Jean&#x27;, &#x27;Chevin&#x27;, &#x27;1838 Derek Terrace&#x27;, &#x27;625-887-6472&#x27;, &#x27;12-Apr-1984&#x27;, &#x27;0849voay290&#x27;);
+insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (5, &#x27;Olive&#x27;, &#x27;Laight&#x27;, &#x27;3707 Forest Dale Road&#x27;, &#x27;774-781-4903&#x27;, &#x27;23-Nov-1981&#x27;, &#x27;4293syxw940&#x27;);</code></pre><figure id="aff9f958-46f2-414d-b3d3-93207db35a6d" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.32.12_PM.png"><img style="width:1250px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.32.12_PM.png"/></a></figure><pre id="8b334a15-1d95-481f-942a-e93e1e29ece0" class="code"><code>insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (1, &#x27;Genevieve&#x27;, &#x27;Ormesher&#x27;, &#x27;569 Summit Crossing&#x27;, &#x27;163-934-0295&#x27;, &#x27;31-May-1986&#x27;, &#x27;F&#x27;, &#x27;Quality Engineer&#x27;, &#x27;15-Feb-2020&#x27;, 77991, 1);
+insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (2, &#x27;Amos&#x27;, &#x27;Myring&#x27;, &#x27;5 Crest Line Lane&#x27;, &#x27;690-494-2203&#x27;, &#x27;21-Oct-1991&#x27;, &#x27;M&#x27;, &#x27;Tax Accountant&#x27;, &#x27;26-Jun-2020&#x27;, 59798, 2);
+insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (3, &#x27;Deni&#x27;, &#x27;Kirsche&#x27;, &#x27;39 Sundown Drive&#x27;, &#x27;365-554-8022&#x27;, &#x27;19-Sep-1990&#x27;, &#x27;F&#x27;, &#x27;Actuary&#x27;, &#x27;27-Dec-2019&#x27;, 73845, 3);
+insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (4, &#x27;Christyna&#x27;, &#x27;Kearford&#x27;, &#x27;02982 Dixon Plaza&#x27;, &#x27;752-342-5785&#x27;, &#x27;05-May-1992&#x27;, &#x27;F&#x27;, &#x27;Software Consultant&#x27;, &#x27;19-May-2020&#x27;, 78074, 4);
+insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (5, &#x27;Valma&#x27;, &#x27;Bromilow&#x27;, &#x27;1752 Paget Junction&#x27;, &#x27;262-555-1575&#x27;, &#x27;28-Aug-1981&#x27;, &#x27;F&#x27;, &#x27;Operator&#x27;, &#x27;07-Mar-2020&#x27;, 51837, 5);</code></pre><figure id="40978e45-457d-4cfd-8920-b63cf180ab1b" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.57_PM.png"><img style="width:1874px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.57_PM.png"/></a></figure><pre id="f80583db-b525-40cb-9775-5c1ff582a10a" class="code"><code>insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (1, &#x27;Audi&#x27;, &#x27;TT&#x27;, &#x27;2l&#x27;, 5, 35019, 29, 1);
+insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (2, &#x27;Eagle&#x27;, &#x27;Vision&#x27;, &#x27;2l&#x27;, 4, 39441, 44, 2);
+insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (3, &#x27;Geo&#x27;, &#x27;Prizm&#x27;, &#x27;2l&#x27;, 6, 26925, 44, 3);
+insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (4, &#x27;Pontiac&#x27;, &#x27;G6&#x27;, &#x27;2l&#x27;, 4, 24049, 44, 4);
+insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (5, &#x27;Toyota&#x27;, &#x27;Tercel&#x27;, &#x27;2l&#x27;, 6, 28147, 34, 5);</code></pre><figure id="b9a56c43-5345-4797-940b-f9fd5b334910" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.36.25_PM.png"><img style="width:1294px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.36.25_PM.png"/></a></figure><pre id="983c3d8e-6036-431d-80ad-8061af75501d" class="code"><code>insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (1, &#x27;Cadillac&#x27;, &#x27;Escalade EXT&#x27;, &#x27;27-May-2020&#x27;, 2020-02-19 07:00:00 UTC, 23731, 49973, 1);
+insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (2, &#x27;Infiniti&#x27;, &#x27;M&#x27;, &#x27;06-Jun-2020&#x27;, 2020-03-27 06:27:08 UTC, 25619, 47167, 2);
+insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (3, &#x27;Buick&#x27;, &#x27;Century&#x27;, &#x27;15-Sep-2020&#x27;, 2020-05-09 03:04:33 UTC, 22488, 44008, 3);
+insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (4, &#x27;Volkswagen&#x27;, &#x27;Touareg&#x27;, &#x27;27-May-2020&#x27;, 2020-04-27 05:08:21 UTC, 24660, 31353, 4);
+insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (5, &#x27;Infiniti&#x27;, &#x27;M&#x27;, &#x27;01-Feb-2020&#x27;, 2020-07-30 11:23:29 UTC, 24876, 49189, 5);</code></pre><p id="ab1c0af8-b94b-4e6b-bf8a-bcec08c5bc45" class="">
+</p><p id="5144fba0-1ee8-45f3-8a43-d56b755fc3ba" class="block-color-gray_background">c.  Develop 5 SQL queries using embedded SQL (see Python tutorial).</p><figure id="2a16bf01-e51f-4b09-81db-3397aea35aba" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.48_PM.png"><img style="width:2012px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.48_PM.png"/></a></figure><figure id="a5acd241-8605-472d-a66a-1c2561a67ea5" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.57_PM.png"><img style="width:1670px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.57_PM.png"/></a></figure><figure id="228a80af-9c57-4a70-b398-677148a045a3" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.05_PM.png"><img style="width:1716px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.05_PM.png"/></a></figure><figure id="44100428-cfb0-434b-9efc-89046f93e2cf" class="image"><a href="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.14_PM.png"><img style="width:1558px" src="Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.14_PM.png"/></a></figure><hr id="abb70d9c-2edf-48d8-8ba1-db089c183bf7"/><p id="35ec6e2b-087f-4d41-baad-4af1d5843685" class="block-color-gray_background">d.  Upload all the code to GitHub.</p><p id="c410048c-d169-48ce-b0d0-eca513136ba5" class=""><a href="http://github.com">Github.com</a>/frank8922/CSC423 located in the final project folder</p></div></article></body></html>
