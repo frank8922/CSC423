@@ -1,5 +1,8 @@
-# CSC423
-Repository for CSC423 Database Systems
+# Final Project
+
+Date: Dec 2, 2020
+Name: Francisco Belliard
+
 ## Case Study Notes: *Reliable Rentals*
 
 > Purpose: Rent out vehicles to clients.
@@ -48,11 +51,11 @@ Repository for CSC423 Database Systems
 - A Client *signs a* Hire Agreement
 - Each Hire agreement is *for a* Vehicle
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b86831f2-1e51-45d0-9de2-555fee5dc3ba/Partial-Entity-Relation-Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b86831f2-1e51-45d0-9de2-555fee5dc3ba/Partial-Entity-Relation-Diagram.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Entity-Relation-Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Entity-Relation-Diagram.png)
 
 Fig 1. Individual entities and their respective relationships.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3153a0-2be7-4181-abea-22aeca55d84b/Entity-Relation-Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fc3153a0-2be7-4181-abea-22aeca55d84b/Entity-Relation-Diagram.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Entity-Relation-Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Entity-Relation-Diagram.png)
 
 Fig 1.1 Connected ER-Diagram to show entity relationships.
 
@@ -71,11 +74,11 @@ Fig 1.1 Connected ER-Diagram to show entity relationships.
     - A hire agreement is for a vehicle (1..1)
     - A vehicle can either have a hire agreement or not (0..1)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fbb9381-56c3-4736-bc28-dfee0c0cbe67/Partial-Cardinality-Relation_Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fbb9381-56c3-4736-bc28-dfee0c0cbe67/Partial-Cardinality-Relation_Diagram.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Cardinality-Relation_Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Partial-Cardinality-Relation_Diagram.png)
 
 Fig 1.2 Individual entities and their cardinality constraints.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35b568d0-ebca-4868-a559-3e5575e35529/Cardinality-Relation_Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/35b568d0-ebca-4868-a559-3e5575e35529/Cardinality-Relation_Diagram.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Cardinality-Relation_Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Cardinality-Relation_Diagram.png)
 
 Fig. 1.3 Entities and their relationships along with their respective cardinality constraints.
 
@@ -86,12 +89,53 @@ c.  **Identify the attributes associated to the previous entity or relationship 
 ---
 
 - Client(**clientNo,** fName, lName, address, phoneNo, DOB, dLicenseNo).
-- Staff(**staffNo**, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).
-- Outlet(**outletNo**, address, phoneNo, faxNo, staffNo,)
-- Vehicle(regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)
-- HireAgreement(**hireNo**, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)
+    1. clientNo: a single-valued attribute to hold the client number
+    2. fName: a single-valued attribute to hold the clients first name.
+    3. lName: a single-valued attribute to hold the clients last name.
+    4. address: a single-valued attribute to hold the client addressD
+    5. phone: a single-valued attribute to hold the client phone number.
+    6. DOB: a single-valued attribute to hold the client date of birth.
+    7. dLicenseNo: a single-valued attribute to hold the client driver license number.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af3efe84-30a9-4a7d-b705-79a7d4ab0d61/Attribute-Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af3efe84-30a9-4a7d-b705-79a7d4ab0d61/Attribute-Diagram.png)
+- Staff(**staffNo**, fName, lName, address, phoneNo, DOB, sex, jobTitle, dateHired, salary, outletNo).
+    1. staffNo: a single-valued attribute to hold the staff number
+    2. fName: a single-valued attribute to hold the staff member first name.
+    3. lName: a single-valued attribute to hold the staff member last name.
+    4. address: a single-valued attribute to hold the staff member addressD
+    5. phone: a single-valued attribute to hold the staff member phone number.
+    6. DOB: a single-valued attribute to hold the staff member date of birth.
+    7. sex: single-valued attribute to hold the staff members sex.
+    8. jobTitle: single-valued attribute to hold the staff job title.
+    9. dateHired: singled-valued attribute to hold the date the staff member was hired.
+    10. salary: single-valued attribute to hold the staff members salary.
+    11. outletNo: single-valued attribute to hold the outlet the staff member is assigned to.
+- Outlet(**outletNo**, address, phoneNo, faxNo, staffNo,)
+    1. outletNo: a single-valued attribute to hold the outlet number.
+    2. address: a single-valued attribute to hold the outlet address.
+    3. phoneNo: a single-valued attribute to hold the outlet phone number.
+    4. faxNo: a single-valued attribute to hold the outlet fax number.
+    5. staffNo: a single-valued attribute to hold the staff number assigned to that outlet.
+- Vehicle(regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo)
+    1. regNo: a single-valued attribute to hold the vehicle registration number.
+    2. make: a single-valued attribute to hold the vehicle make.
+    3. model: a single-valued attribute to hold the vehicle model.
+    4. engineSize: a single-valued attribute to hold the vehicle engine size.
+    5. capacity: a single-valued attribute to hold the vehicle capacity.
+    6. currentMileage: a single-valued attribute to hold the vehicle's current mileage.
+    7. dailyRate: a single-valued attribute to hold the vehicle's daily rental rate.
+    8. outletNo: a single-valued attribute to hold the outlet the vehicle belongs to.
+- HireAgreement(**hireNo**, clientNo, fName,lName, rentalStarted, returnBy, startMileage, endMileage, regNo)
+    1. hireNo: a single-valued attribute to hold the hire number.
+    2. clientNo: a single-valued attribute to hold the client number.
+    3. fName: a single-valued attribute to hold the clients first name.
+    4. lName: a single-valued attribute to hold the clients last name.
+    5. rentalStarted: a single-valued attribute to hold the rental start date.
+    6. returnBy: a single-valued attribute to hold the rental return date.
+    7. startMileage: a single-valued attribute to hold the rental start mileage.
+    8. endMileage: a single-valued attribute to hold the rental end mileage.
+    9. regNo: a single-valued attribute to hold the vehicle registration number assigned to the hire agreement.
+
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Attribute-Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Attribute-Diagram.png)
 
 Fig 1.4 Individual entities and their attributes
 
@@ -133,7 +177,7 @@ a.  Derive relations from the conceptual model.
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc2e7b1f-5f40-4768-8dcb-c75c6a2603b0/Logical-Entity-Relationship_Diagram.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bc2e7b1f-5f40-4768-8dcb-c75c6a2603b0/Logical-Entity-Relationship_Diagram.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Logical-Entity-Relationship_Diagram.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Logical-Entity-Relationship_Diagram.png)
 
 Fig. 2.1 Logical data model with foreign keys
 
@@ -294,7 +338,7 @@ insert into Outlet (outletNo, address, phoneNo, faxNo) values (4, '682 Dwight Co
 insert into Outlet (outletNo, address, phoneNo, faxNo) values (5, '4932 Surrey Drive', '312-585-7907', '728-625-7215');
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6cc81b50-99cf-48fa-ad72-800884f4d471/Screen_Shot_2020-12-04_at_5.33.41_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6cc81b50-99cf-48fa-ad72-800884f4d471/Screen_Shot_2020-12-04_at_5.33.41_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.41_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.41_PM.png)
 
 ```sql
 insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (1, 'Sibylle', 'Torbard', '68 Schmedeman Pass', '769-409-0265', '03-Jun-1990', '4636relb881');
@@ -304,7 +348,7 @@ insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) v
 insert into Client (clientNo, fName, lName, address, phoneNo, DOB, dLicenseNo) values (5, 'Olive', 'Laight', '3707 Forest Dale Road', '774-781-4903', '23-Nov-1981', '4293syxw940');
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/36496a74-647e-40c6-9bc0-b0975cdebc91/Screen_Shot_2020-12-04_at_5.32.12_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/36496a74-647e-40c6-9bc0-b0975cdebc91/Screen_Shot_2020-12-04_at_5.32.12_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.32.12_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.32.12_PM.png)
 
 ```sql
 insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (1, 'Genevieve', 'Ormesher', '569 Summit Crossing', '163-934-0295', '31-May-1986', 'F', 'Quality Engineer', '15-Feb-2020', 77991, 1);
@@ -314,7 +358,7 @@ insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, 
 insert into Staff (staffNo, fName, lName, address, phoneNo, dob, sex, jobTitle, dateHired, salary, outletNo) values (5, 'Valma', 'Bromilow', '1752 Paget Junction', '262-555-1575', '28-Aug-1981', 'F', 'Operator', '07-Mar-2020', 51837, 5);
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5bbcabd1-de18-41ea-87c4-6e54e4ac0b1a/Screen_Shot_2020-12-04_at_5.33.57_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5bbcabd1-de18-41ea-87c4-6e54e4ac0b1a/Screen_Shot_2020-12-04_at_5.33.57_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.57_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.33.57_PM.png)
 
 ```sql
 insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (1, 'Audi', 'TT', '2l', 5, 35019, 29, 1);
@@ -324,7 +368,7 @@ insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, d
 insert into Vehicle (regNo, make, model, engineSize, capacity, currentMileage, dailyRate, outletNo) values (5, 'Toyota', 'Tercel', '2l', 6, 28147, 34, 5);
 ```
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b072a82e-5802-4e5e-8584-b021c24de532/Screen_Shot_2020-12-04_at_5.36.25_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b072a82e-5802-4e5e-8584-b021c24de532/Screen_Shot_2020-12-04_at_5.36.25_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.36.25_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.36.25_PM.png)
 
 ```sql
 insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startMileage, endMileage, regNo) values (1, 'Cadillac', 'Escalade EXT', '27-May-2020', 2020-02-19 07:00:00 UTC, 23731, 49973, 1);
@@ -336,13 +380,13 @@ insert into HireAgreement (hireNo, fName, lName, rentalStarted, returnBy, startM
 
 c.  Develop 5 SQL queries using embedded SQL (see Python tutorial).
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3355072-7c54-450b-84b8-5c27b8ac4a9a/Screen_Shot_2020-12-04_at_5.25.48_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a3355072-7c54-450b-84b8-5c27b8ac4a9a/Screen_Shot_2020-12-04_at_5.25.48_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.48_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.48_PM.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3382a5dc-45d4-4d82-be32-cf6125c11324/Screen_Shot_2020-12-04_at_5.25.57_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3382a5dc-45d4-4d82-be32-cf6125c11324/Screen_Shot_2020-12-04_at_5.25.57_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.57_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.25.57_PM.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0e83924-059d-4e8b-85b3-20fc1426b427/Screen_Shot_2020-12-04_at_5.26.05_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b0e83924-059d-4e8b-85b3-20fc1426b427/Screen_Shot_2020-12-04_at_5.26.05_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.05_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.05_PM.png)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3b4da1c-b763-41fb-9ae9-3fc27b3103a0/Screen_Shot_2020-12-04_at_5.26.14_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e3b4da1c-b763-41fb-9ae9-3fc27b3103a0/Screen_Shot_2020-12-04_at_5.26.14_PM.png)
+![Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.14_PM.png](Final%20Project%202a4067fb3de3414f9a37c966055a2877/Screen_Shot_2020-12-04_at_5.26.14_PM.png)
 
 ---
 
